@@ -1,11 +1,18 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using FastEndpoints;
 
 namespace RiverBooks.Books;
 
-public static class BookEndpoints
+internal class ListBooksEndpoint(IBookService bookService) : EndpointWithoutRequest<ListBooksResponse>
 {
-  public static void MapBookEndpoints(this WebApplication app)
+  public override void Configure()
   {
-    app.MapGet("/books", (IBookService bookService) => bookService.ListBooks());
+    Get("/books");
+    AllowAnonymous();
+  }
+
+  public override async Task HandleAsync(CancellationToken cancellationToken)
+  {
+    List<BookDTO> books = bookService.ListBooks();
+    await SendAsync(new ListBooksResponse(books), cancellation: cancellationToken);
   }
 }
