@@ -1,9 +1,6 @@
 @Host = http://localhost:5105
 
-GET {{Host}}/weatherforecast/
+GET {{Host}}/books/
 Accept: application/json
 
 ###
-
-GET {{Host}}/books/
-Accept: application/json
