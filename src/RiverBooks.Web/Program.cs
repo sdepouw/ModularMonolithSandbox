@@ -1,8 +1,13 @@
+using RiverBooks.Books;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+// Add Module Services
+builder.Services.AddBookServices();
 
 WebApplication app = builder.Build();
 
@@ -32,6 +37,9 @@ app.MapGet("/weatherforecast", () =>
   return forecast;
 })
 .WithName("GetWeatherForecast");
+
+// Map Module Endpoints
+app.MapBookEndpoints();
 
 app.Run();
 

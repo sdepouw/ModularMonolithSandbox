@@ -4,3 +4,6 @@ GET {{Host}}/weatherforecast/
 Accept: application/json
 
 ###
+
+GET {{Host}}/books/
+Accept: application/json
