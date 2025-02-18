@@ -1,6 +1,17 @@
 @Host = http://localhost:5105
+@ExistingBookId = 1d665949-a89d-4a0a-aff9-6c8fee8be2b9
 
 GET {{Host}}/books/
 Accept: application/json
 
 ###
+
+# GET existing book
+GET {{Host}}/books/{{ExistingBookId}}
+Accept: application/json
+
+###
+
+# GET not-existing book (404)
+GET {{Host}}/books/00000000-0000-0000-0000-000000000000
+Accept: application/json

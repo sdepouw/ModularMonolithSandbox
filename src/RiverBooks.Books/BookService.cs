@@ -12,11 +12,12 @@ internal class BookService(IBookRepository bookRepository) : IBookService
       .ToList();
   }
 
-  public async Task<BookDTO> GetBookByIdAsync(Guid id)
+  public async Task<BookDTO?> GetBookByIdAsync(Guid id)
   {
     Book? book = await bookRepository.GetByIdAsync(id);
-    Guard.Against.Null(book); // TODO: Handle not found case better (return Not Found)
-    return new BookDTO(book.Id, book.Title, book.Author, book.Price);
+    return book is not null
+      ? new BookDTO(book.Id, book.Title, book.Author, book.Price)
+      : null;
   }
 
   public async Task CreateBookAsync(BookDTO book)
