@@ -39,12 +39,6 @@ Accept: application/json
 
 ###
 
-# DELETE Book
-DELETE {{Host}}/Books/{{CreatedBookId}}
-Accept: application/json
-
-###
-
 # UPDATE Book Price
 
 POST {{Host}}/Books/{{CreatedBookId}}/pricehistory
@@ -55,3 +49,9 @@ Content-Type: application/json
   "id": "{{ExistingBookId}}",
   "newPrice": 10000.50
 }
+
+###
+
+# DELETE Book
+DELETE {{Host}}/Books/{{CreatedBookId}}
+Accept: application/json
