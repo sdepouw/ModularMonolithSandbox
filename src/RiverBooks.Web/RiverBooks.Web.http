@@ -73,6 +73,7 @@ Content-Type: application/json
 
 ###
 
+# Login as User
 POST {{Host}}/users/login
 Accept: application/json
 Content-Type: application/json
@@ -81,3 +82,8 @@ Content-Type: application/json
   "email": "{{CreatedUserEmail}}",
   "password": "{{CreatedUserPassword}}"
 }
+
+###
+
+# Replace with token retrieved in above Login request
+@token = abc123
