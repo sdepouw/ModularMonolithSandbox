@@ -1,3 +1,4 @@
+using System.Reflection;
 using FastEndpoints;
 using FastEndpoints.Security;
 using RiverBooks.Books;
@@ -22,8 +23,12 @@ builder.Services.AddFastEndpoints()
   .AddAuthorization();
 
 // Add Module Services
-builder.Services.AddBookModuleServices(builder.Configuration, logger);
-builder.Services.AddUserModuleServices(builder.Configuration, logger);
+List<Assembly> mediatRAssemblies = [typeof(RiverBooks.Web.Program).Assembly];
+builder.Services.AddBookModuleServices(builder.Configuration, logger, mediatRAssemblies);
+builder.Services.AddUserModuleServices(builder.Configuration, logger, mediatRAssemblies);
+
+// Set up MediatR
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(mediatRAssemblies.ToArray()));
 
 WebApplication app = builder.Build();
 
@@ -38,4 +43,7 @@ app.UseFastEndpoints();
 
 app.Run();
 
-public partial class Program; // Needed for tests
+namespace RiverBooks.Web
+{
+  public partial class Program; // Needed for tests
+}

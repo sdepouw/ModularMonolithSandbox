@@ -1,8 +1,9 @@
 ﻿using System.Reflection;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace RiverBooks.Users;
+namespace RiverBooks.Users.Data;
 
 public class UsersDbContext(DbContextOptions<UsersDbContext> options) : IdentityDbContext(options)
 {

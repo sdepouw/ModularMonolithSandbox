@@ -1,4 +1,5 @@
 ﻿using FastEndpoints.Testing;
+using RiverBooks.Web;
 
 namespace RiverBooks.Books.Tests.Endpoints;
 

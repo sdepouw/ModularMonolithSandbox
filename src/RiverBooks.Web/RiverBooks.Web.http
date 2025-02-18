@@ -87,3 +87,24 @@ Content-Type: application/json
 
 # Replace with token retrieved in above Login request
 @token = abc123
+
+# Add item to cart
+POST {{Host}}/cart
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "bookId": "{{ExistingBookId}}",
+  "quantity": 1
+}
+
+###
+
+# List Cart Items
+GET {{Host}}/cart
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
