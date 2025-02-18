@@ -33,12 +33,25 @@ Content-Type: application/json
 
 ###
 
-# GET created book (testing Location header)
+# GET created Book (testing Location header)
 GET {{Host}}/Books/{{CreatedBookId}}
 Accept: application/json
 
 ###
 
-# DELETE book
+# DELETE Book
 DELETE {{Host}}/Books/{{CreatedBookId}}
 Accept: application/json
+
+###
+
+# UPDATE Book Price
+
+POST {{Host}}/Books/{{CreatedBookId}}/pricehistory
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": "{{ExistingBookId}}",
+  "newPrice": 10000.50
+}

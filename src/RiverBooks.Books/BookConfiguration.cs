@@ -26,7 +26,7 @@ internal class BookConfiguration : IEntityTypeConfiguration<Book>
   {
     const string tolkien = "J.R.R. Tolkien";
     yield return new Book(Book1Guid, "The Fellowship of the Ring", tolkien, 10.99m);
-    yield return new Book(Book2Guid, "The Fellowship of the Ring", tolkien, 11.99m);
-    yield return new Book(Book3Guid, "The Fellowship of the Ring", tolkien, 12.99m);
+    yield return new Book(Book2Guid, "The Two Towers", tolkien, 11.99m);
+    yield return new Book(Book3Guid, "The Return of the King", tolkien, 12.99m);
   }
 }
