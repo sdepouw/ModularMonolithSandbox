@@ -29,8 +29,6 @@ if (app.Environment.IsDevelopment())
   app.MapOpenApi();
 }
 
-app.UseHttpsRedirection();
-
 app.UseFastEndpoints();
 
 app.Run();
