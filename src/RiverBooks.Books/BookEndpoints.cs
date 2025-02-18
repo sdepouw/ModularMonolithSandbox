@@ -12,7 +12,7 @@ internal class ListBooksEndpoint(IBookService bookService) : EndpointWithoutRequ
 
   public override async Task HandleAsync(CancellationToken cancellationToken)
   {
-    List<BookDTO> books = bookService.ListBooks();
+    List<BookDTO> books = await bookService.ListBooksAsync();
     await SendAsync(new ListBooksResponse(books), cancellation: cancellationToken);
   }
 }

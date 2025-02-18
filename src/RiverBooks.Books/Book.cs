@@ -7,7 +7,7 @@ internal class Book
   public Guid Id { get; private set; }
   public string Title { get; private set; }
   public string Author { get; private set; }
-  public decimal Price { get; set; }
+  public decimal Price { get; private set; }
 
   internal Book(Guid id, string title, string author, decimal price)
   {
