@@ -1,17 +1,44 @@
 @Host = http://localhost:5105
 @ExistingBookId = 1d665949-a89d-4a0a-aff9-6c8fee8be2b9
+@CreatedBookId = 22da01ad-c2fc-4786-aac9-b3d0860a90a7
 
 GET {{Host}}/books/
 Accept: application/json
 
 ###
 
-# GET existing book
+# GET existing Book
 GET {{Host}}/books/{{ExistingBookId}}
 Accept: application/json
 
 ###
 
-# GET not-existing book (404)
+# GET not-existing Book (404)
 GET {{Host}}/books/00000000-0000-0000-0000-000000000000
+Accept: application/json
+
+###
+
+# POST new Book
+POST {{Host}}/books
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": "{{CreatedBookId}}",
+  "title": "The Hobbit",
+  "author": "J.R.R. Tolkien",
+  "price": 50.99
+}
+
+###
+
+# GET created book (testing Location header)
+GET {{Host}}/Books/{{CreatedBookId}}
+Accept: application/json
+
+###
+
+# DELETE book
+DELETE {{Host}}/Books/{{CreatedBookId}}
 Accept: application/json
