@@ -1,4 +1,4 @@
-@Host = http://localhost:5105
+@Host = https://localhost:7048
 @ExistingBookId = 1d665949-a89d-4a0a-aff9-6c8fee8be2b9
 @CreatedBookId = 22da01ad-c2fc-4786-aac9-b3d0860a90a7
 
@@ -55,3 +55,14 @@ Content-Type: application/json
 # DELETE Book
 DELETE {{Host}}/Books/{{CreatedBookId}}
 Accept: application/json
+
+###
+
+POST {{Host}}/users
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "jon@example.com",
+  "password": "P@ssword123!!"
+}
