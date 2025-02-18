@@ -1,3 +1,3 @@
 ﻿namespace RiverBooks.Books;
 
-public record GetBookByIdRequest(Guid Id);
+internal record GetBookByIdRequest(Guid Id);
