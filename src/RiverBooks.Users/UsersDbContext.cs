@@ -12,6 +12,8 @@ public class UsersDbContext(DbContextOptions<UsersDbContext> options) : Identity
   {
     modelBuilder.HasDefaultSchema("Users"); // TODO: Abandon magic string
     modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+    base.OnModelCreating(modelBuilder);
   }
 
   protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
