@@ -1,7 +1,8 @@
 ﻿using Ardalis.Result;
 using MediatR;
+using RiverBooks.Books.Contracts;
 
-namespace RiverBooks.Books.Contracts;
+namespace RiverBooks.Books.Integrations;
 
 internal class BookDetailsQueryHandler(IBookService bookService) : IRequestHandler<BookDetailsQuery, Result<BookDetailsResponse>>
 {
