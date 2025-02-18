@@ -16,3 +16,9 @@ dotnet ef migrations add Initial -c BookDbContext -p ..\RiverBooks.Books\RiverBo
 ```
 dotnet ef database update
 ```
+
+- To update the Testing database:
+
+```
+dotnet ef database update -- --environment Testing
+```
