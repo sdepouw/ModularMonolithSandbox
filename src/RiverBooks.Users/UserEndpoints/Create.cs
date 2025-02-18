@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace RiverBooks.Users.UserEndpoints;
 
-public class Create(UserManager<ApplicationUser> userManager) : Endpoint<CreateRequest>
+internal class Create(UserManager<ApplicationUser> userManager) : Endpoint<CreateRequest>
 {
   public override void Configure()
   {

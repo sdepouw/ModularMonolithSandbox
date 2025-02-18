@@ -2,6 +2,9 @@
 @ExistingBookId = 1d665949-a89d-4a0a-aff9-6c8fee8be2b9
 @CreatedBookId = 22da01ad-c2fc-4786-aac9-b3d0860a90a7
 
+@CreatedUserEmail = jon@example.com
+@CreatedUserPassword = P@ssword123!!
+
 GET {{Host}}/books/
 Accept: application/json
 
@@ -58,11 +61,23 @@ Accept: application/json
 
 ###
 
+# Create User
 POST {{Host}}/users
 Accept: application/json
 Content-Type: application/json
 
 {
-  "email": "jon@example.com",
-  "password": "P@ssword123!!"
+  "email": "{{CreatedUserEmail}}",
+  "password": "{{CreatedUserPassword}}"
+}
+
+###
+
+POST {{Host}}/users/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "{{CreatedUserEmail}}",
+  "password": "{{CreatedUserPassword}}"
 }
