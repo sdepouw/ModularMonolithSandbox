@@ -2,7 +2,7 @@
 
 namespace RiverBooks.Books;
 
-internal class UpdatePriceEndpoint(IBookService bookService) : Endpoint<UpdatePriceRequest, BookDTO>
+internal class UpdateBookPriceEndpoint(IBookService bookService) : Endpoint<UpdateBookPriceRequest, BookDTO>
 {
   public override void Configure()
   {
@@ -12,8 +12,9 @@ internal class UpdatePriceEndpoint(IBookService bookService) : Endpoint<UpdatePr
     AllowAnonymous();
   }
 
-  public override async Task HandleAsync(UpdatePriceRequest request, CancellationToken cancellationToken)
+  public override async Task HandleAsync(UpdateBookPriceRequest request, CancellationToken cancellationToken)
   {
+    // TODO: Handle Not Found gracefully
     await bookService.UpdateBookPriceAsync(request.Id, request.NewPrice);
 
     BookDTO? updatedBook = await bookService.GetBookByIdAsync(request.Id);
