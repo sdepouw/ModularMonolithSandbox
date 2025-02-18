@@ -5,14 +5,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using RiverBooks.Books;
+using RiverBooks.Books.Data;
 
 #nullable disable
 
 namespace RiverBooks.Books.Data.Migrations
 {
     [DbContext(typeof(BookDbContext))]
-    [Migration("20250218153519_Initial")]
+    [Migration("20250218171512_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -63,14 +63,14 @@ namespace RiverBooks.Books.Data.Migrations
                             Id = new Guid("d0c59d6e-9df6-4dc8-a443-500b91abbc31"),
                             Author = "J.R.R. Tolkien",
                             Price = 11.99m,
-                            Title = "The Fellowship of the Ring"
+                            Title = "The Two Towers"
                         },
                         new
                         {
                             Id = new Guid("c305241e-5737-43a8-af67-6bd43be9bef7"),
                             Author = "J.R.R. Tolkien",
                             Price = 12.99m,
-                            Title = "The Fellowship of the Ring"
+                            Title = "The Return of the King"
                         });
                 });
 #pragma warning restore 612, 618
