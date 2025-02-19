@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using RiverBooks.SharedKernel;
 using RiverBooks.Users.Domain;
 using RiverBooks.Users.Infrastructure.Data;
 using RiverBooks.Users.Interfaces;
@@ -22,7 +21,6 @@ public static class UsersModuleExtensions
     // Add User Services
     services.AddScoped<IApplicationUserRepository, EfApplicationUserRepository>();
     services.AddScoped<IReadOnlyUserStreetAddressRepository, EfUserStreetAddressRepository>();
-    services.AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>();
 
     // If using MediatR in this module, add any assemblies that contain handlers
     mediatRAssemblies.Add(typeof(UsersModuleExtensions).Assembly);

@@ -3,6 +3,7 @@ using FastEndpoints;
 using FastEndpoints.Security;
 using RiverBooks.Books;
 using RiverBooks.OrderProcessing;
+using RiverBooks.SharedKernel;
 using RiverBooks.Users;
 using Serilog;
 using ILogger = Serilog.ILogger;
@@ -31,6 +32,7 @@ builder.Services.AddOrderProcessingModuleServices(builder.Configuration, logger,
 
 // Set up MediatR
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(mediatRAssemblies.ToArray()));
+builder.Services.AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>();
 
 WebApplication app = builder.Build();
 
@@ -47,5 +49,5 @@ app.Run();
 
 namespace RiverBooks.Web
 {
-  public partial class Program; // Needed for tests
+  public class Program; // Needed for tests
 }

@@ -1,8 +1,7 @@
 ﻿using MediatR;
 
-namespace RiverBooks.Users.Contracts;
+namespace RiverBooks.SharedKernel;
 
-// TODO: Move elsewhere.
 public abstract record IntegrationEventBase : INotification
 {
   public DateTimeOffset DateTimeOffset { get; set; } = DateTimeOffset.Now;
