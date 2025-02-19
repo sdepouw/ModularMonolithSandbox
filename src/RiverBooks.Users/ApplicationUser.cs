@@ -1,9 +1,10 @@
-﻿using Ardalis.GuardClauses;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using Ardalis.GuardClauses;
 using Microsoft.AspNetCore.Identity;
 
 namespace RiverBooks.Users;
 
-internal class ApplicationUser : IdentityUser
+internal class ApplicationUser : IdentityUser, IHaveDomainEvents
 {
   public string FullName { get; set; } = "";
 
@@ -41,6 +42,14 @@ internal class ApplicationUser : IdentityUser
     UserStreetAddress newAddress = new(Id, address);
     _addresses.Add(newAddress);
 
+    RegisterDomainEvent(new AddressAddedEvent(newAddress));
+
     return newAddress;
   }
+
+  private List<DomainEventBase> _domainEvents = [];
+  [NotMapped]
+  public IEnumerable<DomainEventBase> DomainEvents => _domainEvents.AsReadOnly();
+  void IHaveDomainEvents.ClearDomainEvents() => _domainEvents.Clear();
+  protected void RegisterDomainEvent(DomainEventBase domainEvent) => _domainEvents.Add(domainEvent);
 }
