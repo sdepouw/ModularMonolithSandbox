@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using Ardalis.GuardClauses;
 using Microsoft.AspNetCore.Identity;
+using RiverBooks.Users.Interfaces;
 
-namespace RiverBooks.Users;
+namespace RiverBooks.Users.Domain;
 
 internal class ApplicationUser : IdentityUser, IHaveDomainEvents
 {

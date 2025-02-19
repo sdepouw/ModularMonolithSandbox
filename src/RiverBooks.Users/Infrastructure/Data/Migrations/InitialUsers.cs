@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿#nullable disable
 
-#nullable disable
+using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace RiverBooks.Users.Data.Migrations
+namespace RiverBooks.Users.Infrastructure.Data.Migrations
 {
   /// <inheritdoc />
   public partial class InitialUsers : Migration
