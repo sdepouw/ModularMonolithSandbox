@@ -2,7 +2,9 @@
 using MediatR;
 using Microsoft.Extensions.Logging;
 using RiverBooks.OrderProcessing.Contracts;
-using RiverBooks.OrderProcessing.MaterializedViews;
+using RiverBooks.OrderProcessing.Domain;
+using RiverBooks.OrderProcessing.Infrastructure;
+using RiverBooks.OrderProcessing.Interfaces;
 
 namespace RiverBooks.OrderProcessing.Integrations;
 

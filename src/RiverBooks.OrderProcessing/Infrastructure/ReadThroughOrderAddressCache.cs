@@ -1,9 +1,11 @@
 ﻿using Ardalis.Result;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using RiverBooks.OrderProcessing.Domain;
+using RiverBooks.OrderProcessing.Interfaces;
 using RiverBooks.Users.Contracts;
 
-namespace RiverBooks.OrderProcessing.MaterializedViews;
+namespace RiverBooks.OrderProcessing.Infrastructure;
 
 internal class ReadThroughOrderAddressCache(RedisOrderAddressCache redisCache, IMediator mediator,
   ILogger<ReadThroughOrderAddressCache> logger) : IOrderAddressCache

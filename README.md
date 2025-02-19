@@ -8,7 +8,7 @@ Doing RiverBooks!
 - Run the following to **add** a migration (replace `Initial` with your migration name):
 
 ```
-dotnet ef migrations add Initial -c BookDbContext -p ..\RiverBooks.Books\RiverBooks.Books.csproj -s .\RiverBooks.Web.csproj -o Data/Migrations
+dotnet ef migrations add Initial -c BookDbContext -p ..\RiverBooks.Books\RiverBooks.Books.csproj -s .\RiverBooks.Web.csproj -o Infrastructure/Data/Migrations
 ```
 
 - Update the physical database with the following:
@@ -29,7 +29,7 @@ dotnet ef database update -c BookDbContext -- --environment Testing
 - Run the following to **add** a migration (replace `InitialUsers` with your migration name):
 
 ```
-dotnet ef migrations add InitialUsers -c UsersDbContext -p ..\RiverBooks.Users\RiverBooks.Users.csproj -s .\RiverBooks.Web.csproj -o Data/Migrations
+dotnet ef migrations add InitialUsers -c UsersDbContext -p ..\RiverBooks.Users\RiverBooks.Users.csproj -s .\RiverBooks.Web.csproj -o Infrastructure/Data/Migrations
 ```
 
 - Update the physical database with the following:
@@ -50,7 +50,7 @@ dotnet ef database update -c UsersDbContext -- --environment Testing
 - Run the following to **add** a migration (replace `Initial_OrderProcessing` with your migration name):
 
 ```
-dotnet ef migrations add Initial_OrderProcessing -c OrderProcessingDbContext -p ..\RiverBooks.OrderProcessing\RiverBooks.OrderProcessing.csproj -s .\RiverBooks.Web.csproj -o Data/Migrations
+dotnet ef migrations add Initial_OrderProcessing -c OrderProcessingDbContext -p ..\RiverBooks.OrderProcessing\RiverBooks.OrderProcessing.csproj -s .\RiverBooks.Web.csproj -o Infrastructure/Data/Migrations
 ```
 
 - Update the physical database with the following:

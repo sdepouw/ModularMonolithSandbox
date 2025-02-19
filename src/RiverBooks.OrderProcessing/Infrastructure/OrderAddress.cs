@@ -1,4 +1,6 @@
-﻿namespace RiverBooks.OrderProcessing.MaterializedViews;
+﻿using RiverBooks.OrderProcessing.Domain;
+
+namespace RiverBooks.OrderProcessing.Infrastructure;
 
 /// <summary>
 /// This is the materialized view's data model

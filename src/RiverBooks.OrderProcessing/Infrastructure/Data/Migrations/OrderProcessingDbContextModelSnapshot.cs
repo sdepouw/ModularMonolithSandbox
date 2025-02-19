@@ -4,20 +4,18 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RiverBooks.OrderProcessing.Data;
+using RiverBooks.OrderProcessing.Infrastructure.Data;
 
 #nullable disable
 
 namespace RiverBooks.OrderProcessing.Data.Migrations
 {
     [DbContext(typeof(OrderProcessingDbContext))]
-    [Migration("20250219135745_Initial_OrderProcessing")]
-    partial class Initial_OrderProcessing
+    partial class OrderProcessingDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
