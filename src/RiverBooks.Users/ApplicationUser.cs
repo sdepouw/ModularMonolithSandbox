@@ -9,6 +9,8 @@ internal class ApplicationUser : IdentityUser
 
   private readonly List<CartItem> _cartItems = [];
   public IReadOnlyCollection<CartItem> CartItems => _cartItems.AsReadOnly();
+  private readonly List<UserStreetAddress> _addresses = [];
+  public IReadOnlyCollection<UserStreetAddress> Addresses => _addresses.AsReadOnly();
 
   public void AddItemToCart(CartItem item)
   {
@@ -25,4 +27,20 @@ internal class ApplicationUser : IdentityUser
   }
 
   internal void ClearCart() => _cartItems.Clear();
+
+  internal UserStreetAddress AddAddress(Address address)
+  {
+    Guard.Against.Null(address);
+
+    UserStreetAddress? existingAddress = _addresses.SingleOrDefault(a => a.StreetAddress == address);
+    if (existingAddress is not null)
+    {
+      return existingAddress;
+    }
+
+    UserStreetAddress newAddress = new(Id, address);
+    _addresses.Add(newAddress);
+
+    return newAddress;
+  }
 }

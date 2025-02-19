@@ -4,6 +4,7 @@
 
 @CreatedUserEmail = jon@example.com
 @CreatedUserPassword = P@ssword123!!
+@CreatedUserStreetAddressId = 710f7f79-7186-4b04-8d14-cc9d93dcfb42
 
 GET {{Host}}/books/
 Accept: application/json
@@ -112,3 +113,40 @@ Authorization: Bearer {{token}}
 GET {{Host}}/orders
 Authorization: Bearer {{token}}
 Accept: application/json
+
+###
+
+# Checkout (not using address IDs currently)
+POST {{Host}}/cart/checkout
+Authorization: Bearer {{token}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "shippingAddressId": "{{CreatedUserStreetAddressId}}",
+  "billingAddressId": "{{CreatedUserStreetAddressId}}"
+}
+
+###
+
+# List Addresses
+GET {{Host}}/users/addresses
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+
+# Add Address
+POST {{Host}}/users/addresses
+Authorization: Bearer {{token}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "street1": "123 Fake Street",
+  "street2": "",
+  "city": "Beverly Hills",
+  "state": "California",
+  "postalCode": "90210",
+  "country": "USA"
+}
