@@ -6,7 +6,7 @@ using RiverBooks.Users.Contracts;
 namespace RiverBooks.OrderProcessing.MaterializedViews;
 
 internal class ReadThroughOrderAddressCache(RedisOrderAddressCache redisCache, IMediator mediator,
-  ILogger<ReadThroughOrderAddressCache> logger): IOrderAddressCache
+  ILogger<ReadThroughOrderAddressCache> logger) : IOrderAddressCache
 {
   public async Task<Result<OrderAddress>> GetByIdAsync(Guid addressId)
   {
@@ -16,7 +16,7 @@ internal class ReadThroughOrderAddressCache(RedisOrderAddressCache redisCache, I
     {
       // Fetch data form source
       logger.LogInformation("Address {Id} not found; fetching from source", addressId);
-      var query = new UserAddressDetailsByIdQuery(addressId);
+      UserAddressDetailsByIdQuery query = new UserAddressDetailsByIdQuery(addressId);
       Result<UserAddressDetails> queryResult = await mediator.Send(query);
 
       if (queryResult.IsSuccess)
