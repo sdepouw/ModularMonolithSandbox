@@ -105,6 +105,10 @@ Content-Type: application/json
 GET {{Host}}/cart
 Accept: application/json
 Authorization: Bearer {{token}}
-Content-Type: application/json
 
 ###
+
+# List All Orders
+GET {{Host}}/orders
+Authorization: Bearer {{token}}
+Accept: application/json
