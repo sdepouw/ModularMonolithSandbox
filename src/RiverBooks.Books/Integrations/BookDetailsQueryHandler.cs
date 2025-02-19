@@ -1,6 +1,7 @@
 ﻿using Ardalis.Result;
 using MediatR;
 using RiverBooks.Books.Contracts;
+using RiverBooks.Books.Interfaces;
 
 namespace RiverBooks.Books.Integrations;
 

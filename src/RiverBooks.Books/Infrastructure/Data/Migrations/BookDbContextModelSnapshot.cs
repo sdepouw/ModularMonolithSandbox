@@ -3,20 +3,18 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RiverBooks.Books.Data;
+using RiverBooks.Books.Infrastructure.Data;
 
 #nullable disable
 
 namespace RiverBooks.Books.Data.Migrations
 {
     [DbContext(typeof(BookDbContext))]
-    [Migration("20250218171512_Initial")]
-    partial class Initial
+    partial class BookDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RiverBooks.Books.Data;
+using RiverBooks.Books.Infrastructure.Data;
+using RiverBooks.Books.Interfaces;
 using Serilog;
 
 namespace RiverBooks.Books;

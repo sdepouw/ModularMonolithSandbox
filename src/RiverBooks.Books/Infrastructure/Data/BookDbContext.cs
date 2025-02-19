@@ -1,7 +1,8 @@
 ﻿using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+using RiverBooks.Books.Domain;
 
-namespace RiverBooks.Books.Data;
+namespace RiverBooks.Books.Infrastructure.Data;
 
 public class BookDbContext(DbContextOptions<BookDbContext> options) : DbContext(options)
 {

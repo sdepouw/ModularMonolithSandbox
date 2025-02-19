@@ -1,6 +1,6 @@
 ﻿using Ardalis.GuardClauses;
 
-namespace RiverBooks.Books;
+namespace RiverBooks.Books.Domain;
 
 internal class Book
 {

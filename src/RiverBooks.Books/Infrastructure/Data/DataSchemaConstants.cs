@@ -1,4 +1,4 @@
-﻿namespace RiverBooks.Books.Data;
+﻿namespace RiverBooks.Books.Infrastructure.Data;
 
 public static class DataSchemaConstants
 {

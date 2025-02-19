@@ -1,4 +1,6 @@
 ﻿using Ardalis.GuardClauses;
+using RiverBooks.Books.Domain;
+using RiverBooks.Books.Interfaces;
 
 namespace RiverBooks.Books;
 

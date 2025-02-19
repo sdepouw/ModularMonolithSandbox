@@ -1,4 +1,5 @@
 ﻿using FastEndpoints;
+using RiverBooks.Books.Interfaces;
 
 namespace RiverBooks.Books.BookEndpoints;
 
