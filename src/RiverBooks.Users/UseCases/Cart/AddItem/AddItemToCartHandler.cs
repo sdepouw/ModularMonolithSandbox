@@ -2,7 +2,7 @@
 using MediatR;
 using RiverBooks.Books.Contracts;
 
-namespace RiverBooks.Users.UseCases;
+namespace RiverBooks.Users.UseCases.Cart.AddItem;
 
 internal class AddItemToCartHandler(IApplicationUserRepository userRepository, IMediator mediator)
   : IRequestHandler<AddItemToCartCommand, Result>
