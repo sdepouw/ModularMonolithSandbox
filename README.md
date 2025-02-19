@@ -43,3 +43,24 @@ dotnet ef database update -c UsersDbContext
 ```
 dotnet ef database update -c UsersDbContext -- --environment Testing
 ```
+
+## OrderProcessing Database Migrations
+
+- Change to `RiverBooks.Web` directory
+- Run the following to **add** a migration (replace `Initial_OrderProcessing` with your migration name):
+
+```
+dotnet ef migrations add Initial_OrderProcessing -c OrderProcessingDbContext -p ..\RiverBooks.OrderProcessing\RiverBooks.OrderProcessing.csproj -s .\RiverBooks.Web.csproj -o Data/Migrations
+```
+
+- Update the physical database with the following:
+
+```
+dotnet ef database update -c OrderProcessingDbContext
+```
+
+- To update the Testing database:
+
+```
+dotnet ef database update -c OrderProcessingDbContext -- --environment Testing
+```
