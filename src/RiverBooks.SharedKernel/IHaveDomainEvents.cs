@@ -1,6 +1,4 @@
-﻿using RiverBooks.Users.Domain;
-
-namespace RiverBooks.Users.Interfaces;
+﻿namespace RiverBooks.SharedKernel;
 
 public interface IHaveDomainEvents
 {
