@@ -34,6 +34,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.Users.Contracts"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.SharedKernel", "RiverBooks.SharedKernel\RiverBooks.SharedKernel.csproj", "{763A0719-4C10-4374-9B28-CAF7089F6ABD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.OrderProcessing.Tests", "RiverBooks.OrderProcessing.Tests\RiverBooks.OrderProcessing.Tests.csproj", "{42C5A622-CCE0-4705-939B-4A79E748E331}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -152,6 +154,18 @@ Global
 		{763A0719-4C10-4374-9B28-CAF7089F6ABD}.Release|x64.Build.0 = Release|Any CPU
 		{763A0719-4C10-4374-9B28-CAF7089F6ABD}.Release|x86.ActiveCfg = Release|Any CPU
 		{763A0719-4C10-4374-9B28-CAF7089F6ABD}.Release|x86.Build.0 = Release|Any CPU
+		{42C5A622-CCE0-4705-939B-4A79E748E331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42C5A622-CCE0-4705-939B-4A79E748E331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42C5A622-CCE0-4705-939B-4A79E748E331}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{42C5A622-CCE0-4705-939B-4A79E748E331}.Debug|x64.Build.0 = Debug|Any CPU
+		{42C5A622-CCE0-4705-939B-4A79E748E331}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{42C5A622-CCE0-4705-939B-4A79E748E331}.Debug|x86.Build.0 = Debug|Any CPU
+		{42C5A622-CCE0-4705-939B-4A79E748E331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42C5A622-CCE0-4705-939B-4A79E748E331}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42C5A622-CCE0-4705-939B-4A79E748E331}.Release|x64.ActiveCfg = Release|Any CPU
+		{42C5A622-CCE0-4705-939B-4A79E748E331}.Release|x64.Build.0 = Release|Any CPU
+		{42C5A622-CCE0-4705-939B-4A79E748E331}.Release|x86.ActiveCfg = Release|Any CPU
+		{42C5A622-CCE0-4705-939B-4A79E748E331}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -164,5 +178,6 @@ Global
 		{576A9AB6-2497-48B8-80F7-7A8EFC953754} = {8ACED6E0-B1BD-4C47-B2B2-C9B0BB0B11C9}
 		{79952F8B-3890-44CF-BEEA-BCC24FA6CA16} = {8ACED6E0-B1BD-4C47-B2B2-C9B0BB0B11C9}
 		{0F5E3BC4-E7E3-45A7-9EA5-25DD78924356} = {96D95416-D319-40B4-A29A-84593B0ED4CC}
+		{42C5A622-CCE0-4705-939B-4A79E748E331} = {8ACED6E0-B1BD-4C47-B2B2-C9B0BB0B11C9}
 	EndGlobalSection
 EndGlobal
