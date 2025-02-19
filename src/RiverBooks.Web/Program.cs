@@ -5,6 +5,7 @@ using RiverBooks.Books;
 using RiverBooks.OrderProcessing;
 using RiverBooks.SharedKernel;
 using RiverBooks.Users;
+using RiverBooks.Users.UseCases.Cart.AddItem;
 using Serilog;
 using ILogger = Serilog.ILogger;
 
@@ -33,7 +34,10 @@ builder.Services.AddOrderProcessingModuleServices(builder.Configuration, logger,
 // Set up MediatR
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(mediatRAssemblies.ToArray()));
 builder.Services.AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>();
+// The order matters! Logging is going to happen before fluent validation
 builder.Services.AddMediatRLoggingBehavior();
+builder.Services.AddMediatRFluentValidationBehavior();
+builder.Services.AddValidatorsFromAssemblyContaining<AddItemToCartCommandValidator>();
 
 WebApplication app = builder.Build();
 
