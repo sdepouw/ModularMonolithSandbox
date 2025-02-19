@@ -64,3 +64,17 @@ dotnet ef database update -c OrderProcessingDbContext
 ```
 dotnet ef database update -c OrderProcessingDbContext -- --environment Testing
 ```
+
+## OrderProcessing Materialized View Support - Redis
+
+Requires Docker. Run the following command:
+
+```
+docker run --name my-redis -p 6379:6379 -d redis
+```
+
+Confirm that it is running with:
+
+```
+docker ps
+```
