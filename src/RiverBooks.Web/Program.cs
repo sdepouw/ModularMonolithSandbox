@@ -23,7 +23,7 @@ builder.Services.AddFastEndpoints()
   .AddAuthorization();
 
 // Add Module Services
-List<Assembly> mediatRAssemblies = [typeof(RiverBooks.Web.Program).Assembly];
+List<Assembly> mediatRAssemblies = [typeof(Program).Assembly];
 builder.Services.AddBookModuleServices(builder.Configuration, logger, mediatRAssemblies);
 builder.Services.AddUserModuleServices(builder.Configuration, logger, mediatRAssemblies);
 
@@ -43,7 +43,4 @@ app.UseFastEndpoints();
 
 app.Run();
 
-namespace RiverBooks.Web
-{
-  public partial class Program; // Needed for tests
-}
+public partial class Program; // Needed for tests
