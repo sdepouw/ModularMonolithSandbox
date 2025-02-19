@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.OrderProcessing"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.OrderProcessing.Contracts", "RiverBooks.OrderProcessing.Contracts\RiverBooks.OrderProcessing.Contracts.csproj", "{79952F8B-3890-44CF-BEEA-BCC24FA6CA16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.Users.Contracts", "RiverBooks.Users.Contracts\RiverBooks.Users.Contracts.csproj", "{0F5E3BC4-E7E3-45A7-9EA5-25DD78924356}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -124,6 +126,18 @@ Global
 		{79952F8B-3890-44CF-BEEA-BCC24FA6CA16}.Release|x64.Build.0 = Release|Any CPU
 		{79952F8B-3890-44CF-BEEA-BCC24FA6CA16}.Release|x86.ActiveCfg = Release|Any CPU
 		{79952F8B-3890-44CF-BEEA-BCC24FA6CA16}.Release|x86.Build.0 = Release|Any CPU
+		{0F5E3BC4-E7E3-45A7-9EA5-25DD78924356}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F5E3BC4-E7E3-45A7-9EA5-25DD78924356}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F5E3BC4-E7E3-45A7-9EA5-25DD78924356}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0F5E3BC4-E7E3-45A7-9EA5-25DD78924356}.Debug|x64.Build.0 = Debug|Any CPU
+		{0F5E3BC4-E7E3-45A7-9EA5-25DD78924356}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0F5E3BC4-E7E3-45A7-9EA5-25DD78924356}.Debug|x86.Build.0 = Debug|Any CPU
+		{0F5E3BC4-E7E3-45A7-9EA5-25DD78924356}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F5E3BC4-E7E3-45A7-9EA5-25DD78924356}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F5E3BC4-E7E3-45A7-9EA5-25DD78924356}.Release|x64.ActiveCfg = Release|Any CPU
+		{0F5E3BC4-E7E3-45A7-9EA5-25DD78924356}.Release|x64.Build.0 = Release|Any CPU
+		{0F5E3BC4-E7E3-45A7-9EA5-25DD78924356}.Release|x86.ActiveCfg = Release|Any CPU
+		{0F5E3BC4-E7E3-45A7-9EA5-25DD78924356}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -135,5 +149,6 @@ Global
 		{EDE93B26-9B43-4E05-98FC-4B62E6D4FD7B} = {3088F0C6-5C2B-4C40-8E86-62323FBBA355}
 		{576A9AB6-2497-48B8-80F7-7A8EFC953754} = {8ACED6E0-B1BD-4C47-B2B2-C9B0BB0B11C9}
 		{79952F8B-3890-44CF-BEEA-BCC24FA6CA16} = {8ACED6E0-B1BD-4C47-B2B2-C9B0BB0B11C9}
+		{0F5E3BC4-E7E3-45A7-9EA5-25DD78924356} = {96D95416-D319-40B4-A29A-84593B0ED4CC}
 	EndGlobalSection
 EndGlobal

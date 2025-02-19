@@ -25,4 +25,13 @@ internal class RedisOrderAddressCache(ILogger<RedisOrderAddressCache> logger) : 
     logger.LogInformation("Address {Id} returned from {DatabaseType}", addressId, "REDIS");
     return Result.Success(address);
   }
+
+  public async Task<Result> StoreAsync(OrderAddress orderAddress)
+  {
+    string key = orderAddress.Id.ToString();
+    string addressJson = JsonSerializer.Serialize(orderAddress);
+    await _redisDatabase.StringSetAsync(key, addressJson);
+    logger.LogInformation("Address {Id} stored in {DatabaseType}", orderAddress.Id, "REDIS");
+    return Result.Success();
+  }
 }

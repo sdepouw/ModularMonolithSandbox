@@ -87,7 +87,7 @@ Content-Type: application/json
 ###
 
 # Replace with token retrieved in above Login request
-@token = abc123
+@token = eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3Mzk5Nzg3ODksIkVtYWlsQWRkcmVzcyI6ImpvbkBleGFtcGxlLmNvbSIsImV4cCI6MTczOTk4MjM4OSwibmJmIjoxNzM5OTc4Nzg5fQ.DDofJkRuZJrJtCPi4gEcHMfFM9efyHRfwWsQEc3iTCQ
 
 # Add item to cart
 POST {{Host}}/cart
@@ -116,7 +116,7 @@ Accept: application/json
 
 ###
 
-# Checkout (not using address IDs currently)
+# Checkout
 POST {{Host}}/cart/checkout
 Authorization: Bearer {{token}}
 Accept: application/json
@@ -143,7 +143,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "street1": "123 Fake Street",
+  "street1": "1234 Fake Street",
   "street2": "",
   "city": "Beverly Hills",
   "state": "California",
