@@ -4,7 +4,7 @@
 
 @CreatedUserEmail = jon@example.com
 @CreatedUserPassword = P@ssword123!!
-@CreatedUserStreetAddressId = 710f7f79-7186-4b04-8d14-cc9d93dcfb42
+@CreatedUserStreetAddressId = 5f0fda3b-50f2-427e-8f18-15a2bc888a2f
 
 GET {{Host}}/books/
 Accept: application/json
@@ -87,7 +87,7 @@ Content-Type: application/json
 ###
 
 # Replace with token retrieved in above Login request
-@token = eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3Mzk5Nzg3ODksIkVtYWlsQWRkcmVzcyI6ImpvbkBleGFtcGxlLmNvbSIsImV4cCI6MTczOTk4MjM4OSwibmJmIjoxNzM5OTc4Nzg5fQ.DDofJkRuZJrJtCPi4gEcHMfFM9efyHRfwWsQEc3iTCQ
+@token = abc123
 
 # Add item to cart
 POST {{Host}}/cart
@@ -143,7 +143,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "street1": "1234 Fake Street",
+  "street1": "888 Redis Avenue",
   "street2": "",
   "city": "Beverly Hills",
   "state": "California",
