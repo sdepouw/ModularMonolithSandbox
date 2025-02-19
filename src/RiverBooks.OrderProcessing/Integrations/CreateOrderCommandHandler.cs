@@ -1,10 +1,11 @@
 ﻿using Ardalis.Result;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using RiverBooks.OrderProcessing.Contracts;
 
 namespace RiverBooks.OrderProcessing.Integrations;
 
-internal class CreateOrderCommandHandler(IOrderRepository orderRepository)
+internal class CreateOrderCommandHandler(IOrderRepository orderRepository, ILogger<CreateOrderCommandHandler> logger)
   : IRequestHandler<CreateOrderCommand, Result<OrderDetailsResponse>>
 {
   public async Task<Result<OrderDetailsResponse>> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
@@ -18,6 +19,8 @@ internal class CreateOrderCommandHandler(IOrderRepository orderRepository)
 
     await orderRepository.AddAsync(newOrder);
     await orderRepository.SaveChangesAsync();
+
+    logger.LogInformation("New Order Created! {NewOrderId}", newOrder.Id);
 
     return new OrderDetailsResponse(newOrder.Id);
   }
