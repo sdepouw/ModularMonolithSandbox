@@ -7,6 +7,7 @@ namespace RiverBooks.Users.Data;
 public class UsersDbContext(DbContextOptions<UsersDbContext> options, IDomainEventDispatcher? dispatcher) : IdentityDbContext(options)
 {
   internal DbSet<ApplicationUser> ApplicationUsers { get; set; }
+  internal DbSet<UserStreetAddress> UserStreetAddresses { get; set; }
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {

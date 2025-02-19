@@ -87,7 +87,7 @@ Content-Type: application/json
 ###
 
 # Replace with token retrieved in above Login request
-@token = abc123
+@token = abc
 
 # Add item to cart
 POST {{Host}}/cart
@@ -150,3 +150,9 @@ Content-Type: application/json
   "postalCode": "90210",
   "country": "USA"
 }
+
+###
+
+# Flush cache
+POST {{Host}}/flushcache
+Accept: application/json

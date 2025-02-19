@@ -18,6 +18,7 @@ public static class UsersModuleExtensions
 
     // Add User Services
     services.AddScoped<IApplicationUserRepository, EfApplicationUserRepository>();
+    services.AddScoped<IReadOnlyUserStreetAddressRepository, EfUserStreetAddressRepository>();
     services.AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>();
 
     // If using MediatR in this module, add any assemblies that contain handlers
