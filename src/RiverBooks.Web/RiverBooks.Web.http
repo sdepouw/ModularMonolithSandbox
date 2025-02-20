@@ -170,5 +170,12 @@ GET {{Host}}/emails
 
 ###
 
-# Top Sales by Month
+# Top Sales by Month - REACH IN REPORTING
 GET {{Host}}/topsales?month=2&year=2025
+
+###
+
+# Top Sales by Month2 - EVENT INGESTION CUSTOM DB
+GET {{Host}}/topsales2?month=2&year=2025
+
+###

@@ -4,18 +4,18 @@ using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace RiverBooks.Reporting.ReportEndpoints;
+namespace RiverBooks.Reporting;
 
 internal class TopSellingBooksReportService(ILogger<TopSellingBooksReportService> logger, IConfiguration config)
   : ITopSellingBooksReportService
 {
-  private readonly string _connectionString = config.GetConnectionString("OrderProcessingConnectionString") ?? "";
+  private readonly string _connectionString = config.GetConnectionString("ReportingConnectionString") ?? "";
 
   public async Task<TopBooksByMonthReport> ReachInSqlQuery(int month, int year)
   {
     const string sql =
       """
-      SELECT b.Id, b.Title, b.Author, sum(oi.Quantity) AS Units, sum(oi.UnitPrice * oi.Quantity) AS Sales
+      SELECT b.Id AS BookId, b.Title, b.Author, sum(oi.Quantity) AS Units, sum(oi.UnitPrice * oi.Quantity) AS Sales
       FROM Books.Books b
       INNER JOIN OrderProcessing.OrderItem oi ON oi.BookId = b.Id
       INNER JOIN OrderProcessing.Orders o ON oi.OrderId = o.Id

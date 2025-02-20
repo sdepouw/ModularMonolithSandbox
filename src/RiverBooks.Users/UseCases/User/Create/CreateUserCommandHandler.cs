@@ -1,7 +1,6 @@
 ﻿using Ardalis.Result;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
-using RiverBooks.EmailSending;
 using RiverBooks.EmailSending.Integrations;
 using RiverBooks.Users.Domain;
 

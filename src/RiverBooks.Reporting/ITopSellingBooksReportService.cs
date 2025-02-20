@@ -1,4 +1,4 @@
-﻿namespace RiverBooks.Reporting.ReportEndpoints;
+﻿namespace RiverBooks.Reporting;
 
 internal interface ITopSellingBooksReportService
 {
