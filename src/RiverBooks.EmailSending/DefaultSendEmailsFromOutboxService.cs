@@ -4,8 +4,28 @@ using MongoDB.Driver;
 
 namespace RiverBooks.EmailSending;
 
-internal class SendEmailsFromOutboxService(IOutboxService outboxService, ISendEmail emailSender,
-  IMongoCollection<EmailOutboxEntity> emailCollection, ILogger<SendEmailsFromOutboxService> logger) : ISendEmailsFromOutboxService
+internal interface IGetEmailsFromOutboxService
+{
+  Task<Result<EmailOutboxEntity>> GetUnprocessedEmailEntity();
+}
+
+internal class MongoDbGetEmailsFromOutboxService(IMongoCollection<EmailOutboxEntity> emailCollection)
+  : IGetEmailsFromOutboxService
+{
+  public async Task<Result<EmailOutboxEntity>> GetUnprocessedEmailEntity()
+  {
+    FilterDefinition<EmailOutboxEntity> unprocessedFilter = Builders<EmailOutboxEntity>.Filter
+      .Eq(entity => entity.DateTimeUtcProcessed, null);
+    EmailOutboxEntity? unsentEmailEntity = await emailCollection.Find(unprocessedFilter).FirstOrDefaultAsync();
+
+    if (unsentEmailEntity is null) return Result.NotFound();
+
+    return unsentEmailEntity;
+  }
+}
+
+internal class DefaultSendEmailsFromOutboxService(IGetEmailsFromOutboxService outboxService, ISendEmail emailSender,
+  IMongoCollection<EmailOutboxEntity> emailCollection, ILogger<DefaultSendEmailsFromOutboxService> logger) : ISendEmailsFromOutboxService
 {
   public async Task CheckForAndSendEmailsAsync()
   {
