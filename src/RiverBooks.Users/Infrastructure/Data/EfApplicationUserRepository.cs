@@ -6,6 +6,8 @@ namespace RiverBooks.Users.Infrastructure.Data;
 
 internal class EfApplicationUserRepository(UsersDbContext dbContext) : IApplicationUserRepository
 {
+  public ValueTask<ApplicationUser?> GetUserByIdAsync(Guid userId) => dbContext.ApplicationUsers.FindAsync(userId.ToString());
+
   public Task<ApplicationUser?> GetUserWithCartByEmailAsync(string email)
   {
     return dbContext.ApplicationUsers

@@ -52,5 +52,5 @@ internal class ApplicationUser : IdentityUser, IHaveDomainEvents
   [NotMapped]
   public IEnumerable<DomainEventBase> DomainEvents => _domainEvents.AsReadOnly();
   void IHaveDomainEvents.ClearDomainEvents() => _domainEvents.Clear();
-  protected void RegisterDomainEvent(DomainEventBase domainEvent) => _domainEvents.Add(domainEvent);
+  private void RegisterDomainEvent(DomainEventBase domainEvent) => _domainEvents.Add(domainEvent);
 }
