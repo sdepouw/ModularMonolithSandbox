@@ -89,6 +89,12 @@ Content-Type: application/json
 # Replace with token retrieved in above Login request
 @token = abc
 
+# Log/Return Email Claim
+GET {{Host}}/whoami
+Authorization: Bearer {{token}}
+
+###
+
 # Add item to cart
 POST {{Host}}/cart
 Accept: application/json

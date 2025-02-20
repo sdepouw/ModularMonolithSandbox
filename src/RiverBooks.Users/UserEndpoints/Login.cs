@@ -10,7 +10,7 @@ internal class Login(UserManager<ApplicationUser> userManager) : Endpoint<UserLo
   public override void Configure()
   {
     Post("/users/login");
-    AllowAnonymous();
+    Claims("EmailAddress");
   }
 
   public override async Task HandleAsync(UserLoginRequest request, CancellationToken cancellationToken)
