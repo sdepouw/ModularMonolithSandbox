@@ -162,3 +162,8 @@ Content-Type: application/json
 # Flush cache
 POST {{Host}}/flushcache
 Accept: application/json
+
+###
+
+# List Emails in Outbox
+GET {{Host}}/emails

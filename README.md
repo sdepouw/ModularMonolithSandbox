@@ -88,3 +88,17 @@ docker run --name=papercut -p 25:25 -p 37408:37408 jijiechen/papercut:latest -d
 ```
 
 Visit [http://localhost:37408](http://localhost:37408) to see messages in PaperCut
+
+## Email Module Outboux Pattern - MongoDB
+
+Requires Docker. Run the following command:
+
+```
+docker run --name mongodb -d -p 27017:27017 mongo
+```
+
+Confirm that it is running with:
+
+```
+docker ps
+```
