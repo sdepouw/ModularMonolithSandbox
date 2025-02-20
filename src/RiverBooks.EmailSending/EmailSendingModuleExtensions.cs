@@ -18,11 +18,16 @@ public static class EmailSendingModuleExtensions
     services.Configure<MongoDBSettings>(config.GetSection("MongoDB"));
     services.AddMongoDB(config);
 
-    services.AddScoped<ISendEmail, MimeKitEmailSender>();
-    services.AddScoped<IOutboxService, MongoDbOutboxService>();
+    // Add module services
+    services.AddTransient<ISendEmail, MimeKitEmailSender>();
+    services.AddTransient<IOutboxService, MongoDbOutboxService>();
+    services.AddTransient<ISendEmailsFromOutboxService, SendEmailsFromOutboxService>();
 
     // If using MediatR in this module, add any assemblies that contain handlers
     mediatRAssemblies.Add(typeof(EmailSendingModuleExtensions).Assembly);
+
+    // Add BackgroundWorker
+    services.AddHostedService<EmailSendingBackgroundService>();
 
     logger.Information("{Module} module services registered", "Email Sending");
     return services;
