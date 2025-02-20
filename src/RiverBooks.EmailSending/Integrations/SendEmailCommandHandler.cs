@@ -1,4 +1,5 @@
 ﻿using Ardalis.Result;
+using RiverBooks.EmailSending.EmailBackgroundService;
 
 namespace RiverBooks.EmailSending.Integrations;
 

@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using RiverBooks.EmailSending;
+using RiverBooks.EmailSending.Integrations;
 using RiverBooks.Users.Domain;
 
 namespace RiverBooks.Users.UseCases.User.Create;

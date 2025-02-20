@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 
-namespace RiverBooks.EmailSending;
+namespace RiverBooks.EmailSending.EmailBackgroundService;
 
 internal interface IGetEmailsFromOutboxService
 {

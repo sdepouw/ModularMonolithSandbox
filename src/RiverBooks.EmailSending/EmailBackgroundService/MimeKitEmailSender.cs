@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using MimeKit;
 
-namespace RiverBooks.EmailSending;
+namespace RiverBooks.EmailSending.EmailBackgroundService;
 
 internal class MimeKitEmailSender(ILogger<MimeKitEmailSender> logger) : ISendEmail
 {

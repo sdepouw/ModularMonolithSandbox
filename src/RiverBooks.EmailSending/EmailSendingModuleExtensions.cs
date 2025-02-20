@@ -5,6 +5,7 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
+using RiverBooks.EmailSending.EmailBackgroundService;
 using RiverBooks.EmailSending.Integrations;
 using Serilog;
 
