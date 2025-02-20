@@ -171,4 +171,4 @@ GET {{Host}}/emails
 ###
 
 # Top Sales by Month
-GET {{Host}}/topsales
+GET {{Host}}/topsales?month=2&year=2025

@@ -2,7 +2,8 @@
 
 namespace RiverBooks.Reporting.ReportEndpoints;
 
-internal class TopSalesByMonth : Endpoint<TopSalesByMonthRequest, TopSalesByMonthResponse>
+internal class TopSalesByMonth(ITopSellingBooksReportService reportService)
+  : Endpoint<TopSalesByMonthRequest, TopSalesByMonthResponse>
 {
   public override void Configure()
   {
@@ -12,10 +13,8 @@ internal class TopSalesByMonth : Endpoint<TopSalesByMonthRequest, TopSalesByMont
 
   public override async Task HandleAsync(TopSalesByMonthRequest request, CancellationToken cancellationToken)
   {
-    TopSalesByMonthResponse response = new() { };
+    TopBooksByMonthReport report = await reportService.ReachInSqlQuery(request.Month, request.Year);
+    TopSalesByMonthResponse response = new(report);
     await SendAsync(response, cancellation: cancellationToken);
   }
 }
-
-internal record TopSalesByMonthRequest(int Year, int Month);
-internal record TopSalesByMonthResponse();
