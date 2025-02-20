@@ -4,7 +4,7 @@ using RiverBooks.Users.Domain;
 using RiverBooks.Users.Interfaces;
 using RiverBooks.Users.UserEndpoints;
 
-namespace RiverBooks.Users.UseCases.User;
+namespace RiverBooks.Users.UseCases.User.ListAddresses;
 
 internal class ListAddressesHandler(IApplicationUserRepository userRepository)
   : IRequestHandler<ListAddressesQuery, Result<List<UserAddressDTO>>>

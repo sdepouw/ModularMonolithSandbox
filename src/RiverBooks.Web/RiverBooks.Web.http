@@ -3,6 +3,7 @@
 @CreatedBookId = 22da01ad-c2fc-4786-aac9-b3d0860a90a7
 
 @CreatedUserEmail = jon@example.com
+@CreatedUserEmail2 = smiles@example.com
 @CreatedUserPassword = P@ssword123!!
 @CreatedUserStreetAddressId = 5f0fda3b-50f2-427e-8f18-15a2bc888a2f
 
@@ -68,7 +69,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "email": "{{CreatedUserEmail}}",
+  "email": "{{CreatedUserEmail2}}",
   "password": "{{CreatedUserPassword}}"
 }
 
@@ -80,7 +81,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "email": "{{CreatedUserEmail}}",
+  "email": "{{CreatedUserEmail2}}",
   "password": "{{CreatedUserPassword}}"
 }
 
