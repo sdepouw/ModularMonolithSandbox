@@ -167,3 +167,8 @@ Accept: application/json
 
 # List Emails in Outbox
 GET {{Host}}/emails
+
+###
+
+# Top Sales by Month
+GET {{Host}}/topsales
