@@ -22,5 +22,6 @@ internal class MimeKitEmailSender(ILogger<MimeKitEmailSender> logger) : ISendEma
     logger.LogInformation("Email sent!");
 
     await client.DisconnectAsync(true);
+    logger.LogInformation("Disconnected from SmtpClient");
   }
 }

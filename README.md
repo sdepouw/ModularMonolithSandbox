@@ -78,3 +78,13 @@ Confirm that it is running with:
 ```
 docker ps
 ```
+
+## Local Email Server - PaperCut
+
+Requires Docker. Run the following command:
+
+```
+docker run --name=papercut -p 25:25 -p 37408:37408 jijiechen/papercut:latest -d
+```
+
+Visit [http://localhost:37408](http://localhost:37408) to see messages in PaperCut
